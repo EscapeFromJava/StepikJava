@@ -4,20 +4,13 @@ public class Task_2_4_3 {
     private String printTextPerRole(String[] roles, String[] textLines) {
         StringBuilder text = new StringBuilder();
         for (String role : roles) {
-            text.append(role);
-            text.append(":\n");
+            text.append(role.concat(":\n"));
             for (int i = 0; i < textLines.length; i++) {
                 if (textLines[i].startsWith(role.concat(":"))) {
-                    int indexChar = textLines[i].indexOf(':');
-                    String currentRole = textLines[i].substring(0, indexChar);
-                    String currentText = textLines[i].substring(indexChar + 1);
-                    text.append(++i);
-                    text.append(")");
-                    text.append(currentText);
-                    text.append("\n");
+                    text.append(i+1);
+                    text.append(")".concat(textLines[i].substring( textLines[i].indexOf(":")+ 1)).concat("\n"));
                 }
             }
-
             text.append("\n");
         }
         return String.valueOf(text);
