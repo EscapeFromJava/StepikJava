@@ -1,3 +1,5 @@
+//Напишите программу, выводящую в консоль It's alive! It's alive!
+
 package org.example.section_1;
 
 public class Task_1_2 {
